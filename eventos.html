@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Imagens/favicon.ico">
+    <title>Eventos Escolares</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-white">
+        <div class="container-fluid">
+            <a href="index.html"><img src="Imagens/logo.png" alt="LOGO" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link fw-bold" href="arrecadacoes.html">Arrecadações</a>
+                    <a class="nav-link fw-bold" href="recreio.html">Recreio do Aluno</a>
+                    <a class="nav-link fw-bold" href="ouvidoria.html">Ouvidoria</a>
+                    <a class="nav-link fw-bold" href="monitoria.html">Monitoria</a>
+                    <a class="nav-link fw-bold" href="eventos.html">Eventos</a>
+                    <a class="nav-link fw-bold" id="nav-link-user" href="aluno.html">Área do Aluno</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="conteudo1">
+        <br><br>
+        <h1 class="titulo1">Eventos Escolares</h1><br>
+        <h5 class="titulo2">Veja os eventos da nossa Escola!</h5>
+        <br>
+    </div>
+
+    <div class="container my-5">
+        <h3 class="fw-bold text-danger mb-4"><i class="bi bi-star-fill me-2"></i> Destaques</h3>
+        <div class="row g-4">
+            
+            <div class="col-md-6">
+                <div class="card h-100 bg-danger text-white border-0 shadow-lg">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title fw-bold mb-0">Junete</h5>
+                            <span class="badge bg-white text-danger">Festa</span>
+                        </div>
+                        <p class="card-text">Festa junina com barracas, quadrilhas e muito mais!</p>
+                        <a href="junete.html" class="btn btn-outline-light btn-sm">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 bg-danger text-white border-0 shadow-lg">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title fw-bold mb-0">Intercurso</h5>
+                            <span class="badge bg-white text-danger">Esportes</span>
+                        </div>
+                        <p class="card-text">Torneio esportivo entre os cursos da ETEC.</p>
+                        <a href="#" class="btn btn-outline-light btn-sm">Ver detalhes</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <h3 class="fw-bold text-danger mb-4"><i class="bi bi-calendar3-event me-2"></i> Todos os Eventos</h3>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-start border-4 border-danger shadow-sm">
+                    <div class="card-body">
+                        <span class="badge rounded-pill bg-danger-subtle text-danger fw-semibold mb-2">Festa</span>
+                        <div class="mb-2 text-muted small">
+                            <i class="bi bi-calendar-event me-1"></i> Junho
+                        </div>
+                        <h5 class="fw-bold text-danger">Junete</h5>
+                        <p class="mb-2">Festa junina com barracas, quadrilhas e muito mais!</p>
+
+                        <button class="btn btn-outline-danger btn-sm mb-2" data-bs-toggle="collapse" data-bs-target="#juneteTexto">
+                            Ver detalhes
+                        </button>
+                        <div class="collapse" id="juneteTexto">
+                            <p class="mt-2 small">
+                                A Junete é a tradicional festa junina da ETEC, promovida por alunos e professores. Cada sala organiza uma barraca temática, com comidas típicas, brincadeiras, danças e muita diversão para a comunidade escolar.
+                            </p>
+                            <a href="junete.html" class="btn btn-danger btn-sm">Gerenciar minha sala</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-start border-4 border-danger shadow-sm">
+                    <div class="card-body">
+                        <span class="badge rounded-pill bg-danger-subtle text-danger fw-semibold mb-2">Esportes</span>
+                        <div class="mb-2 text-muted small">
+                            <i class="bi bi-calendar-event me-1"></i> Setembro
+                        </div>
+                        <h5 class="fw-bold text-danger">BikeEtec</h5>
+                        <p class="mb-2">Passeio ciclístico da ETEC com foco em saúde e meio ambiente.</p>
+                        <button class="btn btn-outline-danger btn-sm mb-2" data-bs-toggle="collapse" data-bs-target="#bikeTexto">
+                            Ver detalhes
+                        </button>
+                        <div class="collapse" id="bikeTexto">
+                            <p class="mt-2 small">
+                                O BikeEtec incentiva a prática esportiva e a consciência ambiental, reunindo alunos, professores e comunidade em um passeio de bicicleta de Leme à Santa Cruz.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-start border-4 border-danger shadow-sm">
+                    <div class="card-body">
+                        <span class="badge rounded-pill bg-danger-subtle text-danger fw-semibold mb-2">Social</span>
+                        <div class="mb-2 text-muted small">
+                            <i class="bi bi-calendar-event me-1"></i> Anual
+                        </div>
+                        <h5 class="fw-bold text-danger">Gincana Escolar</h5>
+                        <p class="mb-2">Competições entre turmas da escola com foco em criatividade.</p>
+                        <button class="btn btn-outline-danger btn-sm mb-2" data-bs-toggle="collapse" data-bs-target="#gincanaTexto">
+                            Ver detalhes
+                        </button>
+                        <div class="collapse" id="gincanaTexto">
+                            <p class="mt-2 small">
+                                A Gincana movimenta a escola com provas de conhecimento, esportes, tarefas solidárias e muito trabalho em equipe entre os alunos de todos os cursos e séries.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-start border-4 border-danger shadow-sm">
+                    <div class="card-body">
+                        <span class="badge rounded-pill bg-danger-subtle text-danger fw-semibold mb-2">Esportes</span>
+                        <div class="mb-2 text-muted small">
+                            <i class="bi bi-calendar-event me-1"></i> Semestral
+                        </div>
+                        <h5 class="fw-bold text-danger">Intercurso</h5>
+                        <p class="mb-2">Torneio esportivo entre os cursos da ETEC.</p>
+                        <button class="btn btn-outline-danger btn-sm mb-2" data-bs-toggle="collapse" data-bs-target="#intercursoTexto">
+                            Ver detalhes
+                        </button>
+                        <div class="collapse" id="intercursoTexto">
+                            <p class="mt-2 small">
+                                O Intercurso reúne alunos de diferentes cursos em disputas esportivas como futsal, vôlei e muito mais, promovendo integração e espírito esportivo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-start border-4 border-danger shadow-sm">
+                    <div class="card-body">
+                        <span class="badge rounded-pill bg-danger-subtle text-danger fw-semibold mb-2">Social</span>
+                        <div class="mb-2 text-muted small">
+                            <i class="bi bi-calendar-event me-1"></i> Anual
+                        </div>
+                        <h5 class="fw-bold text-danger">InterETEC</h5>
+                        <p class="mb-2">Disputa entre ETECs da região em diversas modalidades.</p>
+                        <button class="btn btn-outline-danger btn-sm mb-2" data-bs-toggle="collapse" data-bs-target="#interetecTexto">
+                            Ver detalhes
+                        </button>
+                        <div class="collapse" id="interetecTexto">
+                            <p class="mt-2 small">
+                                O InterETEC promove a união entre ETECs com jogos, debates e apresentações culturais. É uma oportunidade para representar a escola em nível regional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-start border-4 border-danger shadow-sm">
+                    <div class="card-body">
+                        <span class="badge rounded-pill bg-danger-subtle text-danger fw-semibold mb-2">Acadêmico</span>
+                        <div class="mb-2 text-muted small">
+                            <i class="bi bi-calendar-event me-1"></i> Anual
+                        </div>
+                        <h5 class="fw-bold text-danger">Olimpíadas (OBMEP, OBA...)</h5>
+                        <p class="mb-2">Competições acadêmicas de destaque nacional.</p>
+                        <button class="btn btn-outline-danger btn-sm mb-2" data-bs-toggle="collapse" data-bs-target="#olimpiadasTexto">
+                            Ver detalhes
+                        </button>
+                        <div class="collapse" id="olimpiadasTexto">
+                            <p class="mt-2 small">
+                                Participamos de diversas olimpíadas como a OBMEP (Matemática), OBA (Astronomia), ONC (Ciências) e muitas outras, com apoio da escola para todos os interessados.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 pt-5 pb-3 border-top border-danger">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="Imagens/1.png" alt="Logo ETEC" style="max-width: 150px;" class="mb-3">
+                    <p class="text-secondary">
+                        Portal ETEC — Sistema digital criado por alunos para melhorar a rotina escolar da Etec Deputado Salim Sedeh.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-secondary">Página Inicial</a></li>
+                        <li><a href="recreio.html" class="text-decoration-none text-secondary">Recreio do Aluno</a></li>
+                        <li><a href="monitoria.html" class="text-decoration-none text-secondary">Agendar Monitoria</a></li>
+                        <li><a href="eventos.html" class="text-decoration-none text-secondary">Eventos Escolares</a></li>
+                        <li><a href="ouvidoria.html" class="text-decoration-none text-secondary">Ouvidoria</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white">Contato</h5>
+                    <p class="text-secondary mb-1"><i class="bi bi-envelope me-2"></i>(19) 3571-4898</p>
+                </div>
+            </div>
+            <hr class="border-danger">
+            <div class="text-center text-secondary">
+                © 2025 Portal ETEC — Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+
+</body>
+</html>

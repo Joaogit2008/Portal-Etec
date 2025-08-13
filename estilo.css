@@ -1,0 +1,37 @@
+/*Imagens*/
+.logo{
+    width: 100px;
+    height: auto;
+}
+
+/*Geral*/
+.conteudo1{
+    background-color: #dc2626;
+}
+
+.centro1{
+    text-align: center;
+    font-weight: bold;
+}
+
+/*Títulos*/
+.titulo1{
+    color: white;
+    padding-left: 2%;
+    font-size: 60px;
+}
+
+.titulo2{
+    color: #fecaca;
+    padding-left: 2%;
+    padding-right: 50%;
+    font-size: 20px;
+}
+
+/*Cards*/
+.card1{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 25px;
+    text-align: center;
+}

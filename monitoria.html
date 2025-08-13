@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Imagens/favicon.ico">
+    <title>Monitoria</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+    <!--BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!--NavBar-->
+    <nav class="navbar navbar-expand-lg bg-body-white">
+    <div class="container-fluid">
+        <a href="index.html"><img src="Imagens/logo.png" alt="LOGO" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link fw-bold" href="arrecadacoes.html">Arrecadações</a>
+            <a class="nav-link fw-bold" href="recreio.html">Recreio do Aluno</a>
+            <a class="nav-link fw-bold" href="ouvidoria.html">Ouvidoria</a>
+            <a class="nav-link fw-bold" href="monitoria.html">Monitoria</a>
+            <a class="nav-link fw-bold" href="eventos.html">Eventos</a>
+            <a class="nav-link fw-bold" id="nav-link-user"href="aluno.html">Área do Aluno</a>
+        </div>
+        </div>
+    </div>
+    </nav>
+
+    <!--Conteúdo-->
+    <div class="conteudo1">
+      <br><br>
+      <h1 class="titulo1">Monitoria - Ajuda entre alunos!</h1><br>
+      <h5 class="titulo2">Solicite e se inscreva para as Monitorias da Escola, para ajudar em seu desempenho acadêmico!</h5>
+      <br>
+  </div>
+
+  <br>
+
+<div class="container py-5">
+
+    <!-- Título -->
+    <h3 class="text-danger fw-bold mb-4"><i class="bi bi-journal-check me-2"></i>Agendamento de Monitoria</h3>
+
+    <!-- Formulário -->
+    <div class="bg-white p-4 rounded shadow-sm mb-5 border border-danger">
+      <form id="formMonitoria">
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Nome do Aluno</label>
+            <input type="text" class="form-control" placeholder="Digite seu nome completo" required>
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">Série</label>
+            <select class="form-select" required>
+              <option value="" selected disabled>Selecione</option>
+              <option>1º Ano</option>
+              <option>2º Ano</option>
+              <option>3º Ano</option>
+            </select>
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">Curso</label>
+            <select class="form-select" required>
+              <option value="" selected disabled>Escolha</option>
+              <option>Desenvolvimento de Sistemas</option>
+              <option>Administração</option>
+              <option>Design Gráfico</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Matéria com Dificuldade</label>
+            <input type="text" class="form-control" placeholder="Ex: Matemática, Física" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Conteúdo Específico</label>
+            <input type="text" class="form-control" placeholder="Ex: Equação do 2º grau" required>
+          </div>
+
+          <div class="col-12 text-end">
+            <button class="btn btn-danger px-4" type="submit">Solicitar Monitoria</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+    <!-- Calendário -->
+    <div class="bg-white p-4 rounded shadow-sm border border-danger">
+      <h5 class="text-danger fw-bold mb-3"><i class="bi bi-calendar-event me-2"></i> Dias com Monitorias Marcadas</h5>
+      <div id="calendar"></div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Referência aos elementos do formulário e do calendário
+    const calendarEl = document.getElementById('calendar');
+    const formMonitoria = document.getElementById('formMonitoria');
+
+    // Variável para guardar a data que o usuário selecionar
+    let dataSelecionada = null;
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      locale: 'pt-br',
+      height: 500,
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek'
+      },
+      buttonText: {
+        today: 'Hoje',
+        month: 'Mês',
+        week: 'Semana'
+      },
+      // Eventos iniciais (exemplo)
+      /*events: [
+        { title: 'Monitoria: MAT - João - 2ºDS', start: '2025-08-25' }
+      ],*/
+      // Habilita a seleção de datas
+      selectable: true,
+      
+      // Função que é executada QUANDO o usuário clica em um dia
+      select: function(info) {
+        // Guarda a data selecionada (apenas o dia, sem hora)
+        dataSelecionada = info.startStr;
+        
+        // Avisa o usuário que a data foi selecionada com sucesso
+        alert(`Data selecionada: ${new Date(dataSelecionada).toLocaleDateString('pt-BR', {timeZone: 'UTC'})}\nAgora preencha o formulário.`);
+        
+        // Remove a seleção visual do calendário
+        calendar.unselect();
+      }
+    });
+
+    calendar.render();
+
+    // Adiciona um "ouvinte" para o envio do formulário
+    formMonitoria.addEventListener('submit', function(e) {
+      // Previne o recarregamento padrão da página
+      e.preventDefault(); 
+
+      // Pega os valores dos campos do formulário
+      const nomeAluno = formMonitoria.querySelector('input[placeholder="Digite seu nome completo"]').value;
+      const materia = formMonitoria.querySelector('input[placeholder="Ex: Matemática, Física"]').value;
+
+      // Verifica se uma data foi selecionada
+      if (!dataSelecionada) {
+        alert("Por favor, clique em um dia no calendário antes de solicitar a monitoria.");
+        return; // Interrompe a função
+      }
+
+      // Verifica se os campos foram preenchidos
+      if (!nomeAluno || !materia) {
+        alert("Por favor, preencha seu nome e a matéria com dificuldade.");
+        return; // Interrompe a função
+      }
+
+      // Adiciona o novo evento ao calendário
+      calendar.addEvent({
+        title: `Monitoria: ${materia} - ${nomeAluno}`,
+        start: dataSelecionada,
+        allDay: true, // O evento dura o dia todo
+        backgroundColor: '#dc3545' // Cor vermelha para destacar
+      });
+      
+      // Limpa os campos do formulário e a data selecionada
+      formMonitoria.reset();
+      dataSelecionada = null;
+      
+      // Mensagem de sucesso
+      alert("Monitoria solicitada com sucesso! O evento foi adicionado ao calendário.");
+    });
+  });
+</script>
+<!--Rodapé-->
+
+<footer class="bg-dark text-white mt-5 pt-5 pb-3 border-top border-danger">
+  <div class="container">
+    <div class="row">
+      <!-- Logo e descrição -->
+      <div class="col-md-4 mb-4">
+        <img src="Imagens/1.png" alt="Logo ETEC" style="max-width: 150px;" class="mb-3">
+        <p class="text-secondary">
+          Portal ETEC — Sistema digital criado por alunos para melhorar a rotina escolar da Etec Deputado Salim Sedeh.
+        </p>
+      </div>
+
+      <!-- Links úteis -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-white">Links Rápidos</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-decoration-none text-secondary">Página Inicial</a></li>
+          <li><a href="recreio.html" class="text-decoration-none text-secondary">Recreio do Aluno</a></li>
+          <li><a href="monitoria.html" class="text-decoration-none text-secondary">Agendar Monitoria</a></li>
+          <li><a href="eventos.html" class="text-decoration-none text-secondary">Eventos Escolares</a></li>
+          <li><a href="ouvidoria.html" class="text-decoration-none text-secondary">Ouvidoria</a></li>
+        </ul>
+      </div>
+
+      <!-- Contato e redes -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-white">Contato</h5>
+        <p class="text-secondary mb-1"><i class="bi bi-envelope me-2"></i>(19) 3571-4898</p>
+      </div>
+    </div>
+
+    <hr class="border-danger">
+    <div class="text-center text-secondary">
+      © 2025 Portal ETEC — Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>
